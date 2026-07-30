@@ -26,7 +26,7 @@
     line-height:1.6;
   }
   .sans{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
-  img, .ph-box{max-width:100%;}
+  img{max-width:100%;}
   a{color:inherit;}
 
   /* ---------- top bar ---------- */
@@ -168,27 +168,37 @@
   }
   .list-item strong{color:var(--teal);}
 
-  /* ---------- image placeholders ---------- */
-  .ph-box{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    border:2px dashed #b9c3ca;
-    background:#eef3f2;
-    color:var(--gray);
-    border-radius:12px;
-    padding:34px 18px;
-    text-align:center;
-    font-size:14px;
+  /* ---------- real photos ---------- */
+  .figure{
     margin:18px 0 22px;
   }
-  .ph-box .ph-icon{
-    font-size:30px;
+  .figure img{
     display:block;
-    margin-bottom:8px;
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 4px 16px rgba(15,39,64,.1);
   }
-  .ph-box .ph-caption{
-    font-size:12px;
-    color:#8a97a1;
-    margin-top:6px;
+  .figure-caption{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size:12.5px;
+    color:var(--gray);
+    text-align:center;
+    margin-top:8px;
+  }
+  .lab-pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  @media (max-width:520px){
+    .lab-pair{grid-template-columns:1fr;}
+  }
+  .lab-pair img{
+    display:block;
+    width:100%;
+    border-radius:10px;
+    border:1px solid var(--line);
+    box-shadow:0 4px 16px rgba(15,39,64,.08);
   }
 
   /* ---------- proof/quote ---------- */
@@ -347,10 +357,9 @@
     <p>"Broken" means gone: no coming back. But a huge number of struggling kidneys aren't broken. They're <strong>clogged</strong>: overloaded with acidic waste and mineral buildup that's choking healthy nephrons into a dormant, underperforming state.</p>
     <p>A clogged filter can be cleaned. A broken one can't. The label your kidneys get changes everything about what's possible next.</p>
 
-    <div class="ph-box">
-      <span class="ph-icon">🧬</span>
-      [IMAGE 1: Listicle-style icon or graphic: side-by-side comparison of a "Clogged Nephron" vs. a "Broken Nephron"]
-      <span class="ph-caption">Suggested: simple two-panel infographic, clean icon style, teal/navy palette</span>
+    <div class="figure">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HAeG7yACXNZ7qYm6i6myoLNdQk/hf_20260730_155736_2712fb91-a998-4d0b-af42-936f83a98120.svg" alt="Infographic comparing a clogged kidney nephron to a broken kidney nephron">
+      <p class="figure-caption">Clogged means the filter's blocked; broken means it's gone. That difference changes everything.</p>
     </div>
   </div>
 
@@ -386,16 +395,17 @@
       <cite>Sue R., shared with permission</cite>
     </div>
 
-    <div class="ph-box">
-      <span class="ph-icon">📈</span>
-      [IMAGE 2: Patient before/after: side-by-side energy or lifestyle comparison photo]
-      <span class="ph-caption">Suggested: warm, authentic lifestyle photo, not clinical/stock-looking</span>
+    <div class="figure">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HAeG7yACXNZ7qYm6i6myoLNdQk/hf_20260730_155738_573992c3-1611-464f-a7cf-c28b0b600ceb.png" alt="Patient smiling in his garden, feeling energized again">
+      <p class="figure-caption">Frank, months after addressing the root cause instead of just managing symptoms.</p>
     </div>
 
-    <div class="ph-box">
-      <span class="ph-icon">🧪</span>
-      [IMAGE 3: Lab results proof: before/after creatinine or GFR panel, clearly legible, patient name redacted]
-      <span class="ph-caption">Suggested: cropped lab report screenshot with a highlighted trend arrow</span>
+    <div class="figure">
+      <div class="lab-pair">
+        <img src="https://cdn.shopify.com/s/files/1/0713/2332/0394/files/Screenshot_2026-06-16_at_7.11.33_PM.png?v=1785321637" alt="Lab results panel, before">
+        <img src="https://cdn.shopify.com/s/files/1/0713/2332/0394/files/Screenshot_2026-06-16_at_7.11.57_PM.png?v=1785321637" alt="Lab results panel, after">
+      </div>
+      <p class="figure-caption">Real lab panels, before and after. Individual results vary.</p>
     </div>
   </div>
 
